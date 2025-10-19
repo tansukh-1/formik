@@ -49,7 +49,9 @@ const MyEnhancedForm = withFormik({
 
     return errors;
   },
-
+  initialValues: {
+ name: ' ',
+ },
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
@@ -117,6 +119,10 @@ included in the `FormikBag`.
 Control the initial value of `isValid` prop prior to
 mount. You can also pass a function. Useful for situations when you want to
 enable/disable a submit and reset buttons on initial mount.
+
+### `initialValues?: Object (props: Props) => Object`
+
+With initialValues ​​you can give an initial value to the `input element` and it works when your component is mounted then it changes the value of the `input element` to the initial value given by you, initialValues ​​takes an object, in the key of that object you have to give the value of the name attribute of the `input element` and in the value of the key you can give any value.
 
 ### `mapPropsToErrors?: (props: Props) => FormikErrors<Values>`
 
